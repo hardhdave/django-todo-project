@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Edit Todo</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <h2>Edit Task</h2>
+
+    <form method="post">
+      {% csrf_token %}
+
+      <input type="text" name="title" value="{{ todo.title }}" /><br /><br />
+
+      <textarea name="description">{{ todo.description }}</textarea><br /><br />
+
+      <button type="submit">update</button>
+    </form>
+
+    <a href="/">back</a>
+  </body>
+</html>
